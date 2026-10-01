@@ -1,0 +1,21 @@
+
+<h1>Results</h1>
+
+
+<% if @result[:wrong_answers].count == 0 %>
+  <p>
+    This student got all the answers correct! <br>
+    They scored a <%= @result[:score] %> out of <%= @result[:total_length] %>
+  </p>
+<% else %>
+  <p>The student scored a <%= @result[:score] %> out of <%= @result[:total_length] %></p>
+  <h2>Wrong answers:</h2>
+  <ul>
+    <% @result[:wrong_answers].each do |answer| %>
+      <li>the Student said <%= answer[:incorrect] %>, but the correct answer was <%= answer[:correct] %>.</li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+<%= link_to "Grade another document", root_path %>

@@ -1,0 +1,12 @@
+
+<h1>Paste your answer key into the top field and the student's copy on the bottom field.</h1>
+
+<%= form_with url: "/grading", data: { turbo: false } do |form| %>
+  <%= form.label :answer_key %> <br>
+  <%= form.text_area :answer_key, rows: 20, cols: 30 %> <br>
+
+  <%= form.label :student_answers %> <br>
+  <%= form.text_area :student_answers, rows: 20, cols: 30 %> <br>
+
+  <%= form.submit %>
+<% end %>
