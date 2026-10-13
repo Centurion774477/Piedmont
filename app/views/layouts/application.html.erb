@@ -26,8 +26,10 @@
   <body>
     <%= yield %>
 
-    <%= flash[:notice] %>
-    <%= flash[:warning] %>
-    <%= flash[:error] %>
+    <div id="flashes">
+      <%= flash[:notice] %>
+      <%= flash[:warning] %>
+      <%= flash[:error] %>
+    </div>
   </body>
 </html>
